@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css') }}">
+        <title>Arrowood</title>
+    </head>
+    <body>
+        <header>
+            <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='/arrowood.png') }}" alt="Arrowood Logo" class="navbar__logo" />
+            <nav class="navbar">
+            </a>
+        <ul class="navbar__menu">
+            <li class="dropdown">
+                <a href="#" class="navbar__links">Navigation</a>    
+                <ul class="dropdown__menu">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+            </li>
+        </ul>
+        </nav>
+        </header>
+
+        <section id= "OurWork">
+        
+                <div class="overlay">
+                    <h2>About Us</h2>
+                    <p>Since 1994, Arrowwood Landscape has been transforming outdoor spaces across the South Shore. What started as a collaboration between John Burnett and Rob Libby has grown into a trusted team of landscaping professionals committed to quality, creativity, and customer satisfaction.
+
+We specialize in a wide variety of services, from custom landscape design and hardscape installation to lawn care and routine maintenance. Every project, whether residential or commercial, is approached with meticulous attention to detail and a focus on creating spaces that are both beautiful and functional.
+
+Our team works closely with each client to understand their vision, offering expert guidance on plant selection, materials, and design layout to ensure the final result exceeds expectations. From vibrant gardens and serene outdoor retreats to elegant patios and durable walkways, we take pride in bringing every aspect of your outdoor environment to life.
+
+At Arrowwood, we believe that a well-crafted landscape is more than just aesthetics — it’s a space for living, gathering, and enjoying nature. Fully licensed and insured, we bring decades of experience to every project, ensuring quality workmanship and lasting results.
+
+Whether you are looking to completely redesign your yard, enhance your commercial property, or maintain the beauty of your existing landscape, Arrowwood Landscape is here to make your outdoor vision a reality.</p>
+                </div>
+                <!--<img src="images/tools.jpg" alt="Our Work" class="our-work-image" id = "ourWork"/>-->
+        </section>
+
+        <section id = "Services">
+            <div class="services-container">
+                <div class="services-list">
+                    <h4>SERVICES INCLUDE:</h4>
+                    <ul>
+                    <li>WEEKLY LAWN MAINTENANCE</li>
+                    <li>SPRING AND FALL CLEANUPS</li>
+                    <li>SHRUB PRUNING</li>
+                    <li>MULCHING</li>
+                    <li>LANDSCAPE PLANTINGS</li>
+                    <li>HARDSCAPE INSTALLATION</li>
+                    <ul class = "hardscaping">
+                    <li>WALKWAYS AND PATIOS (BRICK, CONCRETE PAVERS AND BLUESTONE)</li>
+                    <li>SEGMENTED WALLS</li>
+                    <li>FIELDSTONE WALLS</li>
+                    <li>COBBLESTONE EDGING AND APRONS</li>
+                    </ul>
+                    <li>LOW VOLTAGE LIGHTING</li>
+                    <li>CEMETERY MAINTENANCE</li>
+                    </ul>
+                </div>
+                <div class="services-image-container">
+                    <img src = "{{ url_for('static', filename='/services.jpg') }}" alt = "Services" class = "services-image"/>
+                </div>
+            </div>
+        </section>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='contactus.css') }}">
+        <title>Arrowood-Contact Us</title>
+    </head>
+    <body>
+        <header>
+            <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='/arrowood.png') }}" alt="Arrowood Logo" class="navbar__logo" />
+            <nav class="navbar">
+            </a>
+        <ul class="navbar__menu">
+            <li class="dropdown">
+                <a href="#" class="navbar__links">Navigation</a>    
+                <ul class="dropdown__menu">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('our_work') }}">Our Work</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+        </header>
+
+        <main>
+            <section id = "Contact">
+                <div class="contact">
+                    <h2>Contact Us</h2>
+                    <p><b>Phone Number:</b> 781-878-0316</p>
+                    <p><b>Address:</b> 321 BROCKTON AVENUE</p>
+                    <p><b>City:</b> ABINGTON, MA  02351</p>
+                </div>
+                <img src="{{ url_for('static', filename='/contactus.jpg') }}" alt="Contact" class="contact-card">
+                
+            </section>
+        </main>
+
+        <div class="form-container">
+                    <h2>Send Us a Message</h2>
+                    <form action="/contact" method="post">
+        
+                        <label for="first_name"><b>First Name:</b></label>
+                        <input type="text" id="first_name" name="first_name" required><br><br>
+
+                        <label for="last_name"><b>Last Name:</b></label>
+                        <input type="text" id="last_name" name="last_name" required><br><br>
+
+                        <label for="email"><b>Email:</b></label>
+                        <input type="email" id="email" name="email" required><br><br>
+
+                        <label for="phone"><b>Phone:</b></label>
+                        <input type="tel" id="phone" name="phone" required><br><br>
+
+                        
+
+                        <label for = "date"><b>Preferred Contact Date:</b></label>
+                        <input type="date" id="date" name="date"><br><br>
+
+                        <label for="service_requested"><b>Service Requested:</b></label>
+                        <select id="service_requested" name="service_requested" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="weekly_lawn_maintenance">Weekly Lawn Maintenance</option>
+                        <option value="spring_fall_cleanup">Spring and Fall Cleanups</option>
+                        <option value="shrub_pruning">Shrub Pruning</option>
+                        <option value="mulching">Mulching</option>
+                        <option value="landscape_plantings">Landscape Plantings</option>
+                        
+                        <optgroup label="Hardscaping">
+                            <option value="walkways_patio">Walkways and Patios (Brick, Concrete Pavers, Bluestone)</option>
+                            <option value="segmented_walls">Segmented Walls</option>
+                            <option value="fieldstone_walls">Fieldstone Walls</option>
+                            <option value="cobblestone_edging">Cobblestone Edging and Aprons</option>
+                        </optgroup>
+
+                        <option value="low_voltage_lighting">Low Voltage Lighting</option>
+                        <option value="cemetery_maintenance">Cemetery Maintenance</option>
+                    </select><br><br>
+
+                        <div class="button-container">
+                            <button type="submit">Submit</button>  
+                            <button type="reset">Reset</button>
+                        </div>
+
+                    </form>
+                </div>
+    </body>
+</html>

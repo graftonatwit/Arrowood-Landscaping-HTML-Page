@@ -1,0 +1,226 @@
+:root {
+    --primary-color: rgb(220, 21, 7);
+    --secondary-color: #c50707;
+    --overlay-color: rgba(24, 39, 51, 0.85);
+    --menu-speed: 0.75s;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #D2B48C;
+}
+html {
+    scroll-behavior: smooth;
+    color:black;
+}
+
+header {
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+    display: flex;       /* use flexbox for alignment */
+    align-items: center;      /* vertically align items */
+    position: relative;      /* keep items in relative position, so they can stack items vertically */
+    
+}
+.navbar {
+    background-color: red;
+    padding: 10px;
+    margin-right: auto; /* pushes the logo to the right */
+    width: 100%;             /* full width */
+}
+
+.navbar__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.navbar__links {
+    color: black;
+    background-color:  #D2B48C;
+    text-decoration: none;
+    font-size: 30px;
+    
+    padding: 10px;
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative; /* Make the dropdown container relative */
+    display: inline-block; /* Display the dropdown container inline with other elements */
+}
+
+.dropdown__menu {
+    display: none; /* Hide the dropdown menu by default */
+    position: absolute; /* Position it absolutely relative to the dropdown container */
+    background-color:  #D2B48C; /* Background color for the dropdown menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px; /* Minimum width for the dropdown menu */
+}
+
+.dropdown__menu li a {
+    display: block; /* Make the links fill the dropdown menu */
+    padding: 10px; /* Add some padding to the links */
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown__menu li a:hover {
+    background-color: #e8cca7; /* Change the background color on hover */
+}
+
+.dropdown:hover .dropdown__menu {
+    display: block; /* Show the dropdown menu when hovering over the dropdown container */
+}
+.navbar__logo {
+    display: block;        /* makes the logo a block element */
+    margin: 0 auto;        /* centers horizontally */
+    margin-bottom: 10px;     /* adds space below the logo */
+    height: 60px;          /* adjust size */
+    position: absolute;
+    left: 50%;               /* move to middle of container */
+    top: 50%;                /* move to middle of container */
+    transform: translateX(-50%) translateY(-50%);  /* perfect horizontal center */
+    cursor: pointer;       /* changes cursor to pointer on hover */
+    transition: transform 0.3s ease; /* adds smooth transition effect */
+    padding: 8px;
+}
+.navbar__logo:hover {
+    transform:translateX(-50%) translateY(-50%) scale(1.1); /* scales logo by 10% on hover */
+}
+
+main {
+    padding: 20px;
+    background-color: #D2B48C;
+    
+}
+
+#Contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    
+}
+
+.form-container h2 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+.contact h2 {
+    font-size: 34px;
+    margin-bottom: 35px;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contact p {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.form-container {
+    background-color: #e8cca7;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-decoration: underline;
+    
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    cursor: pointer; /* adds pointer cursor on hover */
+    font-size: 15px;
+    border-radius: 5px;
+    transition: all 0.25s ease; /* adds smooth transition effect */
+    
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* pushes buttons to far left and right */
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #3d8b40;
+    transform: translateY(-2px); /* adds a slight lift effect on hover */
+
+}
+/* Reset button style */
+button[type="reset"] {
+    background-color: #888;
+}
+
+button[type="reset"]:hover { /* adds a slight lift effect on hover */
+    background-color: #666;
+}
+
+
+.contact {
+    
+    background-color:  #e8cca7;
+    padding: 20px;
+    margin: 5px 0 5px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200%;
+    max-width: 500px;
+    height: 300px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contact-card {
+    background-color: #e8cca7;
+    padding: 20px;
+    margin: 5px 0 5px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 500px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Input focus effect */
+input:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76,175,80,0.4);
+}
+
+

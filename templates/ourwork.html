@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='ourwork.css') }}">
+        <title>Arrowood-Our Work</title>
+    </head>
+
+    <header>
+            <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='/arrowood.png') }}" alt="Arrowood Logo" class="navbar__logo" />
+            <nav class="navbar">
+            </a>
+        <ul class="navbar__menu">
+            <li class="dropdown">
+                <a href="#" class="navbar__links">Navigation</a>    
+                <ul class="dropdown__menu">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('our_work') }}">Our Work</a></li>
+                    </ul>
+            </li>
+        </ul>
+        </nav>
+        </header> 
+
+
+<body>
+    <h1>Our Work</h1>
+    <div class="gallery">
+
+        <!-- Yard 1 -->
+        <div class="yard">
+            <h2>Yard 1</h2>
+            <div class="yard-images">
+                <img src="{{ url_for('static', filename='yard1.0.jpg') }}" alt="Yard 1 Before">
+                <img src="{{ url_for('static', filename='yard1.1.jpg') }}" alt="Yard 1 After">
+            </div>
+        </div>
+
+        <!-- Yard 2 -->
+        <div class="yard">
+            <h2>Yard 2</h2>
+            <div class="yard-images">
+                <img src="{{ url_for('static', filename='yard2.0.jpg') }}" alt="Yard 2 Before">
+                <img src="{{ url_for('static', filename='yard2.1.jpg') }}" alt="Yard 2 After">
+            </div>
+        </div>
+
+        <!-- Yard 3 -->
+        <div class="yard">
+            <h2>Yard 3</h2>
+            <div class="yard-images">
+                <img src="{{ url_for('static', filename='yard3.0.jpg') }}" alt="Yard 3 Before">
+                <img src="{{ url_for('static', filename='yard3.1.jpg') }}" alt="Yard 3 After">
+            </div>
+        </div>
+
+        <!-- Yard 4 -->
+        <div class="yard">
+            <h2>Yard 4</h2>
+            <div class="yard-images">
+                <img src="{{ url_for('static', filename='yard4.0.jpg') }}" alt="Yard 4 Before">
+                <img src="{{ url_for('static', filename='yard4.1.jpg') }}" alt="Yard 4 After">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

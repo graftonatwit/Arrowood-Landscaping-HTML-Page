@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+        <title>Arrowood</title>
+    </head>
+    <body>
+        <header>
+            <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='/arrowood.png') }}" alt="Arrowood Logo" class="navbar__logo" />
+            <nav class="navbar">
+            </a>
+        <ul class="navbar__menu">
+            <li class="dropdown">
+                <a href="#" class="navbar__links">Navigation</a>    
+                <ul class="dropdown__menu">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('our_work') }}">Our Work</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+        </header>
+
+        <main>
+            <section id="Welcome">
+                <div class="welcome">
+                    <h1>Welcome to Arrowood</h1>
+                    <p>Arrowwood Landscape combines experience, passion, and skill to deliver top-quality landscaping across the South Shore. Fully licensed and insured, we’re ready to make your outdoor vision a reality — from design to maintenance, big or small.</p>
+                </div>
+                
+            </section>
+
+            <section id= "Address">
+                <div class="address">
+                    <h2>ARROWWOOD LANDSCAPE INC.</h2>
+                    <p>Phone Number: 781-878-0316</p>
+                    <p>Address: 321 BROCKTON AVENUE</p>
+                    <p>City: ABINGTON, MA  02351</p>
+                </div>
+                <a href="{{ url_for('static', filename='/card.jpg') }}" class="lightbox-trigger">
+                <img src="{{ url_for('static', filename='/card.jpg') }}" alt="Card" class="card">
+                </a>
+            </section>
+        
+        </main>
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const lightbox = document.getElementById('lightbox'); // Get the lightbox element
+                const lightboxImg = document.getElementById('lightbox-img'); // Get the lightbox and image elements
+                const triggers = document.querySelectorAll('.lightbox-trigger');// Get all the lightbox trigger elements
+                const closeBtn = document.querySelector('.close'); // Get the close button element
+
+                triggers.forEach(trigger => { // Loop through the trigger elements
+                    trigger.addEventListener('click', function(e) {
+                        e.preventDefault(); // Prevent the default link behavior
+                        lightboxImg.src = this.href; // Set lightbox image to the href of the clicked link
+                        lightbox.style.display = 'flex'; // Show the lightbox
+                    });
+                });
+                closeBtn.addEventListener('click', () => { // Add click event listener to the close button
+                    lightbox.style.display = 'none'; // Hide the lightbox when the close button is clicked
+                });
+
+    // Close if clicking outside image
+                lightbox.addEventListener('click', (e) => { // Add click event listener to the lightbox
+                    if(e.target === lightbox) { // If the clicked element is the lightbox
+                        lightbox.style.display = 'none'; // Hide the lightbox when clicking outside the image
+                    } 
+                });
+            });
+        </script>
+    </body>
+</html>

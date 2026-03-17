@@ -1,0 +1,158 @@
+:root {
+    --primary-color: rgb(220, 21, 7);
+    --secondary-color: #c50707;
+    --overlay-color: rgba(24, 39, 51, 0.85);
+    --menu-speed: 0.75s;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #D2B48C;
+}
+html {
+    scroll-behavior: smooth;
+    color:black;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+header {
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+    display: flex;       /* use flexbox for alignment */
+    align-items: center;      /* vertically align items */
+    position: relative;      /* keep items in relative position, so they can stack items vertically */
+    
+}
+.navbar {
+    background-color: red;
+    padding: 10px;
+    margin-right: auto; /* pushes the logo to the right */
+    width: 100%;             /* full width */
+}
+
+.navbar__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.navbar__links {
+    color: black;
+    background-color:  #D2B48C;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative; /* Make the dropdown container relative */
+    display: inline-block; /* Display the dropdown container inline with other elements */
+}
+
+.dropdown__menu {
+    display: none; /* Hide the dropdown menu by default */
+    position: absolute; /* Position it absolutely relative to the dropdown container */
+    background-color:  #D2B48C; /* Background color for the dropdown menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px; /* Minimum width for the dropdown menu */
+}
+
+.dropdown__menu li a {
+    display: block; /* Make the links fill the dropdown menu */
+    padding: 10px; /* Add some padding to the links */
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+.dropdown__menu li a:hover {
+    background-color: #e8cca7; /* Change the background color on hover */
+}
+
+.dropdown:hover .dropdown__menu {
+    display: block; /* Show the dropdown menu when hovering over the dropdown container */
+}
+.navbar__logo {
+    display: block;        /* makes the logo a block element */
+    margin: 0 auto;        /* centers horizontally */
+    margin-bottom: 10px;     /* adds space below the logo */
+    height: 60px;          /* adjust size */
+    position: absolute;
+    left: 50%;               /* move to middle of container */
+    top: 50%;                /* move to middle of container */
+    transform: translateX(-50%) translateY(-50%);  /* perfect horizontal center */
+    cursor: pointer;       /* changes cursor to pointer on hover */
+    transition: transform 0.3s ease; /* adds smooth transition effect */
+    padding: 8px;
+}
+.navbar__logo:hover {
+    transform:translateX(-50%) translateY(-50%) scale(1.1); /* scales logo by 10% on hover */
+}
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* single column for 1x4 layout */
+    gap: 80px; /* spacing between yards */
+    justify-items: center;
+}
+
+.yard {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    width: 900px; /* wider container */
+    max-width: 95%; /* responsive on smaller screens */
+    margin-bottom: 50px;
+}
+
+.yard h2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.yard-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.yard-images img {
+    width: 48%; /* each image takes almost half of container */
+    border-radius: 10px;
+    object-fit: cover;
+    height: 400px; /* increased height */
+}
+
+@media (max-width: 1000px) {
+    .yard {
+        width: 90%;
+    }
+    .yard-images {
+        flex-direction: column;
+    }
+    .yard-images img {
+        width: 100%;
+        height: auto; /* let height adjust proportionally */
+    }
+}
